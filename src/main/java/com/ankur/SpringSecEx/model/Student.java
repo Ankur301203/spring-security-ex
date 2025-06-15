@@ -1,4 +1,4 @@
-package com.ankur.SpringSecEx;
+package com.ankur.SpringSecEx.model;
 
 public class Student {
     private int id;
