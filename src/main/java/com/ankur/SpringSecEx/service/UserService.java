@@ -2,6 +2,7 @@ package com.ankur.SpringSecEx.service;
 
 import com.ankur.SpringSecEx.model.Users;
 import com.ankur.SpringSecEx.repo.UserRepo;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -20,5 +21,9 @@ public class UserService {
         user.setPassword(encoder.encode(user.getPassword()));
         return userRepo.save(user);
 
+    }
+
+    public Users getUser(String id) {
+        return userRepo.findById(Integer.parseInt(id)).orElse(null);
     }
 }
