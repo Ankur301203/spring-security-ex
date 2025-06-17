@@ -16,6 +16,11 @@ public class UserController {
         return userService.register(user);
     }
 
+    @GetMapping("/login")
+    public String login(@RequestBody Users user){
+        return userService.verify(user);
+    }
+
     @GetMapping("/students/{id}")
     public Users getUser(@PathVariable(value = "id") String id){
         return userService.getUser(id);
